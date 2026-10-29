@@ -7,11 +7,10 @@ public class Program
     {
         Console.OutputEncoding = Encoding.UTF8; //using emojis in the terminal
 
+        // CHAPTER 1
         const string MENU_TITLE = "==== MAIN MENU - CODEQUEST ====";
         const string INPUT_CHAPTER = "CHAPTER 1: TRAIN TOUR WIZARD";
         const string INPUT_NAME_WIZARD = "Enter a name for your wizard";
-
-        //
 
         const string MSG_MINUS_TWENTY = "You are retaking it in the second examination session, your rang is Raoden el Elantrí";
         const string MSG_TWENTY_THIRTY = "You still confuse the wand with a spoon, your rang is Zyn el Buguejat";
@@ -34,14 +33,14 @@ public class Program
         {
             randomHours = rdn.Next(1, 25);
             randomPower = rdn.Next(1, 11);
-            //
+            
             level = 1 + power / 10;
             power += randomPower;
             
 
             Console.WriteLine($"⌛ Day {days}: {nameWizard}, you have meditated for {randomHours} hours and now your power is {power} points");
-            
-            //Controlar si ese dia exacto sube de nivel mostrar mensaje extra
+
+            //Check if it levels up on that exact day, and if so, display an additional message
             if (level - 1 < power / 10)
             {
                 level = power / 10;
